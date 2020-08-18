@@ -14,7 +14,7 @@ bank_account = Currency(5000)
 print(bank_account.dollars)
 
 bank_account = Currency(10000)
-print()
+print(bank_account.dollars)
 
 # Declare a PizzaPie class that accepts a total_slices parameter. 
 # In the instantiation process for an object, assign the parameter to an 
