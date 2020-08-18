@@ -1,3 +1,4 @@
+#To store dynamic attribute values
 class Counter():
     count = 0
 
@@ -22,3 +23,6 @@ print(Counter.count)
 print(c1.count)
 print(c2.count)
 print(c3.count)
+
+a1, a2, a3 = [1, 2, 3] #unpackin a list
+print(a1)
