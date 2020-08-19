@@ -36,6 +36,17 @@ print(bob + moe)
 # Preserve the arguments as attributes on the object.
 # The choice of whether to use protected attributes is up to you.
 
+class BusTrip():
+    def __init__(self, destination, company, price):
+        self.destination = destination
+        self.company = company
+        self.price = price
+
+    def __str__(self):
+        return f"You paid {self.price} to {self.company} to go to {self.destination}"
+
+    def __eq__(self, other_trip):
+        return self.destination == other_trip.destination and abs(self.price - other_trip.price) <= 3
 
 
 # Part B: String Representation
