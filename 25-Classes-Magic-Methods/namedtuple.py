@@ -34,3 +34,4 @@ deadlift = GymExercise("deadlift", 225, 6)
 press = GymExercise("press", 120, 8)
 
 print(squat.weight)
+
