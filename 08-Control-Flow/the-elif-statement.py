@@ -39,12 +39,14 @@ print(negative_energy(-5))
 
 
 n = int(input("Enter "))
-
+#Exercise
 if n % 2 != 0:
     print("Weird")
-elif n in range(2, 6) and n % 2 == 0:
+elif n % 2 == 0 and n in range(2, 6):
     print("Not Weird")
-elif n in range(6, 21) and n % 2 == 0:
+elif n % 2 == 0 and n in range(6, 21):
     print("Weird")
-else:
+elif n % 2 == 0 and n > 20:
     print("Not Weird")
+
+
