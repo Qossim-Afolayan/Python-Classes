@@ -18,13 +18,13 @@ class WebRequetTest(unittest.TestCase):
     def test_execute_with_success_response(self, mock_urlopen):
         mock_urlopen.return_value.status = 200
         wr = WebRequet("http//:www.google.com")
-        self.assertAlmostEqual(wr.execute(), "SUCCESS")
+        self.assertEqual(wr.execute(), "SUCCESS")
     
     @patch('urllib.request.urlopen')
     def test_execute_with_failure_response(self, mock_urlopen):
             mock_urlopen.return_value.status = 404
             wr = WebRequet("http//:www.google.com")
-            self.assertAlmostEqual(wr.execute(), "FAILURE")
+            self.assertEqual(wr.execute(), "FAILURE")
 
 if __name__ == "__main__":
     unittest.main()

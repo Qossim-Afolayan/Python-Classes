@@ -66,12 +66,11 @@ airport.departures = {
 
 
 airport.close = Mock(return_value = "Closing")
-airport.open.side_effect = ["Opening...". "Already open"]
+airport.open.side_effect = ["Opening...", "Already open"]
 
 print(airport.gates)      # ["A1", "B2", "C3"]
 print(airport.departures) # { "Atlanta": "12:00PM", "Nashville": "04:30PM" }
 print(airport.close())    # Closing
 
-airport.open = state
 print(airport.open())     # Opening...
 print(airport.open())     # Already open

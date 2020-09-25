@@ -1,7 +1,7 @@
 from unittest.mock import MagicMock
 
 class BurritoBowl():
-    restaurant_name = "Qossim's Burritos"
+    restaurant_name = "Qossim's Burritos" #class attribute
 
     @classmethod
     def steak_special(cls):
