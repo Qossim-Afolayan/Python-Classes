@@ -2,7 +2,7 @@ import sys
 
 # print(sys.argv)
 
-# print(type(sys.argv))
+# print(type(sys.argv)) list
 
 word_length = 2
 
