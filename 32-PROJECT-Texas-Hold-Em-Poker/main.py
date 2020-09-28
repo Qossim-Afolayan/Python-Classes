@@ -1,5 +1,8 @@
 from Pocker.card import Card 
-card1 = Card("2", "Spades")
-card2 = Card("5", "Hearts")
+from Pocker.deck import Deck
+
+deck = Deck()
+cards = Card.create_standard_52_cards()
+deck.add_cards(cards)
 
 # from main import card1, card2
