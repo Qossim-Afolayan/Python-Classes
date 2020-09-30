@@ -5,6 +5,7 @@ class Card():
                 "2", "3", "4", "5", "6", "7", "8", "9", "10",
                 "Jack", "Queen", "King", "Ace"
             )
+    
 
     @classmethod
     def create_standard_52_cards(cls):
@@ -22,7 +23,9 @@ class Card():
        
 
         self.rank = rank
+        self.rank_index = self.RANKS.index(rank)
         self.suit = suit
+
 
     def __str__(self):
         return F"{self.rank} of {self.suit}"
@@ -34,6 +37,5 @@ class Card():
         return self.rank == other.rank and self.suit == other.suit
 
     def __lt__(self, other):
-        current_card_rank_index = self.RANKS.index(self.rank)
-        other_card_rank_index = other.RANKS.index(other.rank)
-        return current_card_rank_index < other_card_rank_index
+        return self.rank_index < other.rank_index
+        
