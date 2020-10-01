@@ -7,6 +7,8 @@ class Hand():
     @property
     def _rank_validations_from_best_to_worst(self):
         return (
+            ("Royal Flush", self._royal_flush),
+            ("Straight Flush", self._straight_flush),
             ("Four of a kind", self._four_of_a_kind),
             ("Full House", self._full_house),
             ("Flush", self._flush),
@@ -14,8 +16,20 @@ class Hand():
             ("Three of a Kind", self._three_of_a_kind),
             ("Two Pair", self._two_pair),
             ("Pair", self._pair),
-            ("High Card", self._high_card)
+            ("High Card", self._high_card),
+            ("No Cards", self._no_card)
         )
+
+    def _royal_flush(self):
+        is_straight_flush = self._straight_flush()
+        if not is_straight_flush:
+            return False
+
+        is_royal = self.cards[-1].rank == "Ace"
+        return is_straight_flush and is_royal
+
+    def _straight_flush(self):
+        return self._straight() and self._flush()
 
     def _four_of_a_kind(self):
         rank_with_four_of_a_kind = self._ranks_with_count(4)
@@ -65,7 +79,10 @@ class Hand():
         return len(rank_with_pairs) == 1
 
     def _high_card(self):
-        return True
+        return len(self.cards) == 2
+
+    def _no_card(self):
+        return len(self.cards) == 0
 
     def _ranks_with_count(self, count):
         return {
