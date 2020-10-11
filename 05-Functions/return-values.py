@@ -76,3 +76,7 @@ def three_number_sum(str):
     
 t = three_number_sum("456")
 print(t)
+
+year = int(input("Input the year "))
+def is_leap(year):
+    return year % 4 == 0 and (year % 400 == 0 or year % 100 != 0)
